@@ -7,17 +7,17 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world");
 
-        JTextField smallField = new JTextField("300, 250, 25, 45, 20");
+        int[] koords = new int[5];
+        JTextField smallField = new JTextField("300, 450, 25, 45, 20");
         JTextField numbers = new JTextField("0, 1, 2, 3, 4, 5, 6, 7, 8, 9");
         JFrame f = new JFrame("Swing Paint Demo");
         MyPanel myPanel = new MyPanel();
 
         numbers.addActionListener(new ActionListener() {
-            @Override
+
             public void actionPerformed(ActionEvent e) {
 
-                String[] parm = smallField.getText().replaceAll("", "").split(",");
-                int[] koords = new int[parm.length];
+                String[] parm = smallField.getText().replaceAll(" ", "").split(",");
                 if (parm.length != parm.length){
 
                     JOptionPane.showMessageDialog(null,"Ошибка в количестве параметров");
